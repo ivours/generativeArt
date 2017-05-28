@@ -3,19 +3,20 @@ function main (ctx, canvas) {
 	canvas.width = 1920
   canvas.height = 1080
 
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "black";
   ctx.fillRect(0,0,canvas.width,canvas.height);
 
 	ctx.translate(canvas.width/2, canvas.height/2);
 
 	x = 0;
   y = 0;
-  n = 3;
+  n = 8;
+  iteraciones = 20000;
 
-  for( var i = 0; i<1000; i++)
+  for( var i = 0; i<iteraciones; i++)
 	{
-	  radio = getRandomInt(10,2500);
-	  angulo = 270; //getRandomInt(0,360);
+	  radio = getRandomInt(1,20000);
+	  angulo = 0; //getRandomInt(0,360);
 	  polinomio(x,y,radio,angulo,n);
   }
 
@@ -99,7 +100,7 @@ function o(x,y)
 
 function getRandomColor() 
 {
-		colores = ["#007F30","#267F48","#00CC4D"];
+		colores = ["red","brown"];
 		
     return colores[Math.floor(Math.random() * 3)];
 }
